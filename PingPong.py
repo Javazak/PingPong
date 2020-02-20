@@ -106,7 +106,6 @@ while True:
         ball.dx *= -1
         os.system("afplay pat.mp3")
         score_a += 1
-        speed_ball += 1
         pen.clear()
         pen.write("Խաղացող A:  {} Խաղացող B:  {} ".format(score_a, score_b), align="center",font=("Courier", 24, "normal"))
 
@@ -115,7 +114,6 @@ while True:
         ball.dx *= -1
         os.system("afplay pat.mp3")
         score_b += 1
-        speed_ball += 1
         pen.clear()
         pen.write("Խաղացող A:  {} Խաղացող B:  {} ".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
@@ -126,20 +124,21 @@ while True:
         ball.dx *= -1
         os.system("afplay PingPong.mp3&")
 
+
     if (ball.xcor() < -340 and ball.xcor() > -350 ) and (ball.ycor() < pol_a.ycor() + 40 and ball.ycor() > pol_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
         os.system("afplay PingPong.mp3&")
 
+
     if score_a == 5:
         pen.clear()
         pen.write("Խաղացող A_ն հաղթեց", align="center", font=("Courier", 30, "bold"))
         os.system("afplay gameover.mp3")
-        break
+        turtle.done()
+
     if score_b == 5:
         pen.clear()
         pen.write("Խաղացող B_ն հաղթեց", align="center", font=("Courier", 30, "bold"))
         os.system("afplay gameover.mp3")
-        pen.up()
-        break
-
+        turtle.done()
